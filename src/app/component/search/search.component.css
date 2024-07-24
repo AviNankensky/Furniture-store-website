@@ -1,0 +1,56 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .search-container:hover,
+  .search-container:focus-within {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .search-container input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .search-button svg {
+    width: 24px;
+    height: 24px;
+    color: #333;
+  }
+  
+  /* מדיה קוורי לתצוגות קטנות יותר */
+  @media (max-width: 768px) {
+    .search-container {
+      max-width: 100%;
+    }
+    
+    .search-container input {
+      font-size: 16px;
+    }
+  }

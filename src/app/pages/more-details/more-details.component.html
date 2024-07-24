@@ -1,0 +1,19 @@
+<div class="item-details-container">
+    <div class="item-image">
+      <img src="{{item.img}}" alt="{{item.Name}}">
+    </div>
+    <div class="item-info">
+      <h1 class="item-name">{{item.Name}}</h1>
+      <p class="item-price">{{item.Price}} ₪</p>
+      <p class="item-description">{{item.Description}}</p>
+      <p class="item-category">קטגוריה: {{item.Category}}</p>
+      <p class="item-makat">מק"ט: {{item.Makat}}</p>
+      <div class="item-actions">
+        <button #addButton class="add-to-cart-button" (click)="add(addButton)">הוסף לסל</button>
+        <div class="quantity-selector">
+          <label for="quantity">כמות:</label>
+          <input type="number" #quantity name="quantity" min="1" value="1">
+        </div>
+      </div>
+    </div>
+  </div>

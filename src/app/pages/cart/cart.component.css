@@ -1,0 +1,12 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  app-cart-list {
+    width: 100%;
+    max-width: 1000px; /* או כל רוחב מקסימלי שתרצה */
+  }

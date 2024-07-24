@@ -1,0 +1,10 @@
+<!-- <div>
+    <app-item {{item}}></app-item>
+</div> -->
+<div class="main">
+    <div  *ngFor="let i of items">
+        <app-item [item]="i"  ></app-item>
+        <!-- <app-item [item]="i" (deleteItemEvent)="ondelete($event)" (addItemEvent)="addItem($event)"></app-item> -->
+    </div>
+</div>
+

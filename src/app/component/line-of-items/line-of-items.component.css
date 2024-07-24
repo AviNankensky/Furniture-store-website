@@ -1,0 +1,22 @@
+.main {
+    display: flex;
+    align-items: center; /* מרכז את האלמנטים אנכית */
+    justify-content: space-between; /* מפזר את האלמנטים לאורך הקונטיינר */
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1; /* מאפשר לקונטיינר האייטמים לתפוס את רוב המרחב */
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center; /* מרכז את החץ אנכית */
+    padding: 0 10px; /* מוסיף מרווח מסביב לחיצים */
+}
+
+.fa-solid {
+    cursor: pointer; /* משנה את הסמן לצורת יד כשעוברים מעל החיצים */
+    font-size: 24px; /* מגדיל את גודל החיצים, תוכל לשנות לפי הצורך */
+}

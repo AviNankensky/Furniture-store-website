@@ -1,0 +1,13 @@
+<div *ngIf="orderByType==='byPrisse>'" class="main">
+
+    <div *ngFor="let i of items" >
+        <app-item [item]="i"></app-item>
+
+    </div>
+</div>
+
+<div *ngIf="orderByType==='byPrisse<'" class="main">
+    <div *ngFor="let i of items.slice().reverse()">
+        <app-item [item]="i"></app-item>
+    </div>
+</div>

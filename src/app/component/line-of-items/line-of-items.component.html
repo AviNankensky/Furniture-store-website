@@ -1,0 +1,13 @@
+<div class="main">
+    <div class="arrow-container">
+        <i (click)="left()" class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="items-container">
+        <div *ngFor="let i of items">
+            <app-item [item]="i"></app-item>
+        </div>
+    </div>
+    <div class="arrow-container">
+        <i (click)="rhiget()" class="fa-solid fa-chevron-right"></i>
+    </div>
+</div>

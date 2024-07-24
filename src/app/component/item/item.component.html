@@ -1,0 +1,14 @@
+<div class="item-container">
+  <img class="item-img" src="{{item.img}}" alt="{{item.Name}}">
+  <div class="item-details">
+    <h1 class="item-name">{{item.Name}}</h1>
+    <h1 class="item-name">{{item.Category}}</h1>
+    <p class="item-price">{{item.Price}}</p>
+    <div class="item-buttons">
+      <i #heart id="heart" class="fas fa-heart" [class.active]="itemIsLike" (click)="addLike(heart)"></i>
+      <a [routerLink]="['/items/', item.Makat]">לפרטים נוספים</a>
+      <button #btn (click)="addFun(btn)">הוסף לסל</button>
+      <!-- <button  #btn (click)="addFun(item, btn)">הוסף לסל</button> -->
+    </div>
+  </div>
+</div>

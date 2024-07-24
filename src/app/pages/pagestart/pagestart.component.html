@@ -1,0 +1,30 @@
+
+<div *ngIf="SerchPage">
+
+    <app-item-list></app-item-list>
+</div>
+
+<div *ngIf="SerchPage==false">
+    
+    <div *ngIf="typeOfPage==='byCategories'">
+        <div *ngFor="let i of arryOfCategory">
+            <app-line-of-items [category]="i">  </app-line-of-items>
+            <br>
+        </div>
+    </div>
+    
+    <div *ngIf="typeOfPage==='original'">
+        <app-item-list></app-item-list>
+        
+    </div>
+    
+    <div *ngIf="typeOfPage==='byPrisse>'">
+        <app-by-prisse-items [orderByType]="typeOfPage"></app-by-prisse-items>
+    </div>
+
+    <div *ngIf="typeOfPage==='byPrisse<'">
+        <app-by-prisse-items [orderByType]="typeOfPage"></app-by-prisse-items>
+    </div>
+
+</div>
+

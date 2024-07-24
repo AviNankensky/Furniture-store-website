@@ -1,0 +1,22 @@
+
+ <div class="cart-page">
+  <h1 class="cart-title">סל הקניות שלך</h1>
+  
+  <div class="cart-items">
+    <div class="cart-item" *ngFor="let i of items">
+      <img class="cart-item-img" src="{{i.img}}" alt="{{i.Name}}">
+      <div class="cart-item-details">
+        <h2 class="cart-item-name">{{i.Name}}</h2>
+        <p class="cart-item-price">{{i.Price}} ₪</p>
+        <p class="cart-item-quantity">כמות: {{this.getNumOfItemsInCart(i.Makat)}}</p> <!-- שורה חדשה -->
+      </div>
+      <button class="remove-button" (click)="deleteItem(i.Makat)">הסר מהסל</button>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <p class="total-price">סך הכול לתשלום: {{cartService.priceSumOfItemsOfCart$| async}} ₪</p>
+    <!-- <p class="total-price">סך הכול לתשלום: {{sum}} ₪</p> -->
+    <button class="checkout-button">המשך לתשלום</button>
+  </div>
+</div>
