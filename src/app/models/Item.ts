@@ -1,9 +1,9 @@
-export class Item{
-    Makat!:string;
-    Name!:string;
-    Description!:string;
-    Price!:number;
-    Qty!:number;
-    Category!:string;
-    img!:string;
+export class Item {
+  makat!: string;
+  name!: string;
+  description!: string;
+  price!: number;
+  qty!: number;
+  img!: string;
+  category!: string;
 }

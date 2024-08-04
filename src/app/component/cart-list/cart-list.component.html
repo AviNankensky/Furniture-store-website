@@ -4,13 +4,13 @@
   
   <div class="cart-items">
     <div class="cart-item" *ngFor="let i of items">
-      <img class="cart-item-img" src="{{i.img}}" alt="{{i.Name}}">
+      <img class="cart-item-img" src="{{i.img}}" alt="{{i.name}}">
       <div class="cart-item-details">
-        <h2 class="cart-item-name">{{i.Name}}</h2>
-        <p class="cart-item-price">{{i.Price}} ₪</p>
-        <p class="cart-item-quantity">כמות: {{this.getNumOfItemsInCart(i.Makat)}}</p> <!-- שורה חדשה -->
+        <h2 class="cart-item-name">{{i.name}}</h2>
+        <p class="cart-item-price">{{i.price}} ₪</p>
+        <p class="cart-item-quantity">כמות: {{this.getNumOfItemsInCart(i.makat)}}</p> <!-- שורה חדשה -->
       </div>
-      <button class="remove-button" (click)="deleteItem(i.Makat)">הסר מהסל</button>
+      <button class="remove-button" (click)="deleteItem(i.makat)">הסר מהסל</button>
     </div>
   </div>
 

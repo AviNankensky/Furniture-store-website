@@ -27,16 +27,17 @@ export class ItemComponent implements AfterViewInit{
   constructor(private cartService: CartService, private reservedService: ReservedService) {
 
     this.btn = document.getElementById("btn")
+    // console.log(this.item.Name)
   }
  
   
   ngAfterViewInit() {
-    if (this.reservedService.CheckifItemExists(this.item.Makat)) {
+    if (this.reservedService.CheckifItemExists(this.item.makat)) {
       this.addLikeButton.nativeElement.classList.add('active');
-      console.log(this.item.Name + " is in favorites");
+      console.log(this.item.name + " is in favorites");
       this.itemIsLike = true;
     }
-    if(this.cartService.CheckifItemExists(this.item.Makat)){
+    if(this.cartService.CheckifItemExists(this.item.makat)){
       
       this.btn.nativeElement.innerText = 'נוסף לסל';
       this.btn.nativeElement.backgroundColor = 'green';
@@ -46,7 +47,7 @@ export class ItemComponent implements AfterViewInit{
   
 
   addFun(button: HTMLButtonElement) {
-    if(this.cartService.CheckifItemExists(this.item.Makat)==false){
+    if(this.cartService.CheckifItemExists(this.item.makat)==false){
     
     button.innerText = 'נוסף לסל';
     button.style.backgroundColor = 'green';
@@ -69,8 +70,8 @@ export class ItemComponent implements AfterViewInit{
 
 
   addLike(heart: HTMLElement) {
-    if (this.reservedService.CheckifItemExists(this.item.Makat)) {
-      this.reservedService.DeletItem(this.item.Makat);
+    if (this.reservedService.CheckifItemExists(this.item.makat)) {
+      this.reservedService.DeletItem(this.item.makat);
       this.itemIsLike = false;
     } else {
       this.reservedService.addItem(this.item);

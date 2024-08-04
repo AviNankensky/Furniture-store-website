@@ -22,7 +22,7 @@ export class ReservedService {
   //   return true
   // }
   CheckifItemExists(makat:string){
-    let index = this.items.findIndex(f=>f.Makat == makat)
+    let index = this.items.findIndex(f=>f.makat == makat)
     return index !== -1
   }
   addItem(item:Item){
@@ -36,7 +36,7 @@ export class ReservedService {
   }
   
   DeletItem(makat:string){
-    let index = this.items.findIndex(f=>f.Makat == makat)
+    let index = this.items.findIndex(f=>f.makat == makat)
     this.items.splice(index,1);
    }
 
@@ -46,7 +46,7 @@ export class ReservedService {
   }
   print_(){
     for(let i of this.items){
-      console.log(i.Name)
+      console.log(i.name)
     }
 
   }

@@ -13,19 +13,52 @@ import { ItemComponent } from "../item/item.component";
 })
 export class LineOfItemsComponent implements OnInit{
   items:Item[]=[];
+  allItemsOfCategory:Item[]=[]
   index_:number=0;
   @Input() category!:string;
-  constructor(private ItemService:ItemService){
-    
+  constructor(private itemService:ItemService){
+    // this.itemService.getItemsFromServerByCatgoris("חדר שינה").subscribe(
+    //   (response) => {
+        
+    //     this.allItemsOfCatgory = response;
+    //     console.log("tfroim cons",this.allItemsOfCatgory)
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   }
   
   ngOnInit() {
-  this.loadItems() 
- }
-  loadItems(){
-    this.items = this.ItemService.getFourItems(this.index_ , this.category)
-
+    this.loadItemsFromServer();
   }
+
+
+  loadItemsFromServer() {
+    this.itemService.getItemsFromServerByCatgoris(this.category).subscribe(
+      (response) => {
+        this.allItemsOfCategory = response;
+        console.log("Items loaded:", this.allItemsOfCategory);
+        this.loadItems();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  loadItems() {
+    var newListOfItems = this.allItemsOfCategory
+    if (this.allItemsOfCategory.length < 5) {
+      this.items = this.allItemsOfCategory;
+    } else {
+      this.items = newListOfItems.slice(this.index_, this.index_ + 4);
+
+    }
+    console.log("Loaded items:", this.items);
+  }
+
+
 
   left(){
     if (this.index_!==0){
@@ -35,7 +68,7 @@ export class LineOfItemsComponent implements OnInit{
     }
   }
   rhiget(){
-    if (this.index_<(this.ItemService.getlengthBycategory(this.category)-4)){
+    if (this.index_<this.allItemsOfCategory.length-4){
       this.index_++
       this.loadItems() 
  

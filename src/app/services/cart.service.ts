@@ -27,17 +27,17 @@ export class CartService {
    upDatePriseCont(){
     let r = 0
     for(let i of this.itemCart){
-      r+=i.item.Price*i.numOfItem
+      r+=i.item.price*i.numOfItem
     }
     this.priceSumOfItemsOfCart$.next(r)
    }
    
    AddItem(item:Item){
-     if(this.CheckifItemExists(item.Makat)){
+     if(this.CheckifItemExists(item.makat)){
        
        
        for (let i of this.itemCart) {
-         if(item.Makat==i.item.Makat)
+         if(item.makat==i.item.makat)
           i.numOfItem++
       }
       
@@ -62,12 +62,12 @@ export class CartService {
   DeletItem(makat: string) {
     this.itemCartContService.downCont();
     
-    let index = this.item.findIndex(f => f.Makat == makat);
+    let index = this.item.findIndex(f => f.makat == makat);
     if (index !== -1) {
       this.item.splice(index, 1);
     }
     
-    let cartItemIndex = this.itemCart.findIndex(f => f.item.Makat == makat);
+    let cartItemIndex = this.itemCart.findIndex(f => f.item.makat == makat);
     if (cartItemIndex !== -1) {
       this.itemCart.splice(cartItemIndex, 1);
     }
@@ -75,13 +75,13 @@ export class CartService {
   }
 
   CheckifItemExists(makat:string){
-    let index = this.item.findIndex(f=>f.Makat == makat)
+    let index = this.item.findIndex(f=>f.makat == makat)
     return index !== -1
   }
 
   getContOfItemInTheCart(maket:string){
     for(let i of this.itemCart){
-      if (i.item.Makat==maket){
+      if (i.item.makat==maket){
         return i.numOfItem
       }
     }

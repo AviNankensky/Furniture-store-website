@@ -19,7 +19,18 @@ export class ItemListComponent  {
   items : Item[]=[];
 
   constructor(private itemService:ItemService){
-    this.items = this.itemService.getAllItems()
+     this.itemService.getAllItemsFromServer().subscribe(
+        (response) => {
+          
+          this.items = response;
+          // console.log('Loaded items:', this.item ); // וידוא שהפריטים נטענו
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    
+    // console.log("gggggggggggggg",this.items)
     this.itemService.getSearchText().subscribe(m=> this.f());
   }
   f(){

@@ -7,13 +7,14 @@ import { PagestartComponent } from "./pages/pagestart/pagestart.component";
 import { SearchComponent } from "./component/search/search.component";
 import { CartIconComponent } from "./component/cart-icon/cart-icon.component";
 import { MainPageService } from './services/main-page.service';
+import { FooterComponent } from "./component/footer/footer.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, ItemComponent, ItemListComponent, PagestartComponent, RouterLink, SearchComponent, CartIconComponent]
+    imports: [RouterOutlet, ItemComponent, ItemListComponent, PagestartComponent, RouterLink, SearchComponent, CartIconComponent, FooterComponent]
 })
 export class AppComponent  {
 
